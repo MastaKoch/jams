@@ -1,3 +1,18 @@
-.jamLogo{
-    font-size: xx-large;
+.navLogo{
+    font-size: 50pt;
+    align-content: center;
+    color: rgb(68, 3, 68);
+}
+
+.navMenu {
+    opacity: .8;
+}
+
+.navMenu:hover{
+    opacity: 1.0;
+}
+.jamDiv{
+    align-items: center;
+    margin-left: 400px;
+    position: relative;
 }

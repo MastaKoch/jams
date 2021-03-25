@@ -10,3 +10,31 @@ body {
     background-position: center center !important;
     background-attachment: fixed !important; 
 }
+
+.container{
+    background-color: white;
+    opacity: .8;
+}
+
+.container:hover{
+    opacity: 1.0;
+    color: rgb(68, 3, 68);
+}
+
+.head, .motto{
+    text-align: center;
+}
+
+.motto{
+    font-style: italic;
+}
+
+.aboutJams{
+    padding: 40px;
+    font-size: 20pt;
+}
+
+.acronym{
+    font-size: 50pt;
+    padding: 10px;
+}
