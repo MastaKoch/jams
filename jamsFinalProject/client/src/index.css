@@ -10,10 +10,14 @@ body {
     background-position: center center !important;
     background-attachment: fixed !important; 
 }
-
+.landingPageBox{
+    margin-bottom: 50px;
+}
 .container{
     background-color: white;
     opacity: .8;
+    border-radius: 30px;
+  
 }
 
 .container:hover{
@@ -34,7 +38,36 @@ body {
     font-size: 20pt;
 }
 
-.acronym{
+.ol{
+    padding: 40px;
+    font-size: 20pt;
+}
+
+.acronymJ, .acronymA, .acronymM, .acronymS{
     font-size: 50pt;
     padding: 10px;
+    
+}
+
+.acronymJ{
+    -webkit-box-shadow: -24px 24px 12px 13px #B757FF; 
+    box-shadow: -24px 24px 12px 13px #B757FF;
+}
+
+.acronymA{
+
+    -webkit-box-shadow: -24px 24px 12px 13px #FF1243; 
+    box-shadow: -24px 24px 12px 13px #FF1243;
+
+}
+
+.acronymM{
+    -webkit-box-shadow: -24px 24px 12px 13px #300524; 
+box-shadow: -24px 24px 12px 13px #300524;
+}
+
+.acronymS{
+    -webkit-box-shadow: -24px 24px 12px 13px #BA158A; 
+    box-shadow: -24px 24px 12px 13px #BA158A;
+
 }

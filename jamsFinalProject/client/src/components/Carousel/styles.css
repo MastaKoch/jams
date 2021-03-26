@@ -1,0 +1,21 @@
+.carousel{
+    background-color: white;
+}
+
+.carouselImg{
+    height: 30%;
+    width: 30%;
+}
+
+h3, p{
+    color: black;
+
+}
+
+.bio{
+    text-align: right;
+}
+
+.abt{
+    text-align: center;
+}
