@@ -19,3 +19,7 @@ h3, p{
 .abt{
     text-align: center;
 }
+
+.sr-only{
+    color: rgb(27, 27, 27);
+}
