@@ -2,6 +2,22 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
+// --------
+// cors securitty cross origin
+const cors = require("cors");
+// for the authenication
+const passport = require("passport");
+// a passport strategy
+const passportLocal = require("passport-local").Strategy;
+// parsing the authn. cookies 
+const cookieParser = require("cookie-parser");
+// bcrypt hashing the password 
+const bcrypt = require("bcryptjs");
+// for express sessions
+const session = require("express-session");
+// body parse parsing requests
+const bodyParser = require("body-parser");
+// -------
 const app = express();
 const PORT = process.env.PORT || 3001;
 
