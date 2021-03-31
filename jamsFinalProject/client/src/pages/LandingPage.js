@@ -12,7 +12,7 @@ export default function landingPage() {
       <div className="landingPageBox">
         <Container text className="container">
           <Header as="h2" className="head">JAMS</Header>
-          <Header as="h3" className="motto">"Helping children find their voice since 2021."</Header>
+          <Header as="h3" className="motto">"Helping families find their voices and access to literacy resources since 2021."</Header>
           <p className="aboutJams"><span className="acronymJ">J</span> ust be yourself.</p>
           <p className="aboutJams"><span className="acronymA">A</span> cknowledge your greatness.</p>
           <p className="aboutJams"><span className="acronymM">M</span> ake your voice heard.</p>

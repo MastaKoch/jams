@@ -6,7 +6,7 @@ export default function EduResources() {
         <div>
            <Container text className="container">
                <Header as="h2" className="head">JAMS</Header>
-               <Header as="h3" className="motto">"Helping children find their voice since 2021."</Header>
+               <Header as="h3" className="motto">"Helping families find their voices and access to literacy resources since 2021."</Header>
            </Container>
         </div>
     )
