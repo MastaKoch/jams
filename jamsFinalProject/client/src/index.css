@@ -17,6 +17,7 @@ body {
     background-color: white;
     opacity: .8;
     border-radius: 30px;
+    padding: 40px;
   
 }
 
@@ -43,12 +44,15 @@ body {
     font-size: 20pt;
 }
 
+
+
+/* styling for acronyms on landing page */
+
 .acronymJ, .acronymA, .acronymM, .acronymS{
     font-size: 50pt;
     padding: 10px;
     
 }
-
 .acronymJ{
     -webkit-box-shadow: -24px 24px 12px 13px #B757FF; 
     box-shadow: -24px 24px 12px 13px #B757FF;
