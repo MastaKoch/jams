@@ -3,27 +3,79 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 // --------
-// cors securitty cross origin
+
 const cors = require("cors");
-// for the authenication
 const passport = require("passport");
-// a passport strategy
 const passportLocal = require("passport-local").Strategy;
-// parsing the authn. cookies 
 const cookieParser = require("cookie-parser");
-// bcrypt hashing the password 
 const bcrypt = require("bcryptjs");
-// for express sessions
 const session = require("express-session");
-// body parse parsing requests
 const bodyParser = require("body-parser");
+const User = require("./models/user");
 // -------
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 
-// Define middleware here
+// Define middleware here -------------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // <-- location of the react app we're connecting to
+    credentials: true,
+  })
+);
+app.use(
+  session({
+    secret: "secretcode",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(cookieParser("secretcode"));
+app.use(passport.initialize());
+app.use(passport.session());
+require("./config/passportConfig")(passport);
+
+// -----END of middleware-----
+
+
+// ----
+// Routes
+app.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) throw err;
+    if (!user) res.send("No User Exists");
+    else {
+      req.logIn(user, (err) => {
+        if (err) throw err;
+        res.send("Successfully Authenticated");
+        console.log(req.user);
+      });
+    }
+  })(req, res, next);
+});
+
+app.post("/signup", (req, res) => {
+  User.findOne({ username: req.body.username }, async (err, doc) => {
+    if (err) throw err;
+    if (doc) res.send("User Already Exists");
+    if (!doc) {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      const newUser = new User({
+        username: req.body.username,
+        password: hashedPassword,
+      });
+      await newUser.save();
+      res.send("User Created");
+    }
+  });
+});
+
+app.get("/user", (req, res) => {
+  res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
+});
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -32,7 +84,16 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/jamsdb");
+mongoose.connect(
+  "mongodb+srv://jerquanus:Blankman@93@cluster0.abs6r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  () => {
+    console.log("Mongoose Is Connected");
+  }
+);
 
 // Start the API server
 app.listen(PORT, function() {
