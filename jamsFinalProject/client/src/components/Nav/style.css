@@ -4,6 +4,11 @@
     color: rgb(68, 3, 68);
 }
 
+.welcome{
+    font-size: 30pt;
+    margin-right: 50px;
+    color: rgb(68, 3, 68);
+}
 .navMenu {
     opacity: .8;
 }
@@ -15,4 +20,8 @@
     align-items: center;
     margin-left: 400px;
     position: relative;
+}
+
+.welcomePane{
+    text-align: 10px;
 }

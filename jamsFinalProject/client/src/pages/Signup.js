@@ -8,7 +8,7 @@ import Axios from "axios";
 function SignupForm() {
   const [signupName, setSignupName] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-
+  const [data, setData] = useState(null);
   const signup = () => {
     Axios({
       method: "POST",
@@ -17,10 +17,31 @@ function SignupForm() {
         password: signupPassword,
       },
       withCredentials: true,
-      url: "http://localhost:8000/signup",
-    }).then((res) => console.log(res));
+      url: "/api/signup",
+    }).then((res) => 
+    {
+      console.log(res)
+      window.location.href= '/login';
+    });
   };
 
+
+  // const login = () => {
+  //   Axios({
+  //     method: "POST",
+  //     data: {
+  //       username: loginName,
+  //       password: loginPassword,
+  //     },
+  //     withCredentials: true,
+  //     url: "/login",
+  //   }).then((res) => {
+  //     console.log(res)
+  //     window.location.href= '/resources';
+      
+    
+  //   });
+  // };
   // const getUser = () => {
   //   Axios({
   //     method: "GET",
@@ -35,15 +56,17 @@ function SignupForm() {
   return (
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> Sign Up for FREE!
-          </Header>
+        
           <Form size='large'>
+          
             <Segment stacked>
+            <Header as='h2' color='teal' textAlign='center'>
+              Sign Up for FREE!
+            </Header>
               <Form.Input 
               fluid icon='user' 
               iconPosition='left' 
-              placeholder='E-mail address' 
+              placeholder='Username' 
               onChange={(e) => setSignupName(e.target.value)}/>
               <Form.Input
                 fluid
@@ -55,14 +78,13 @@ function SignupForm() {
               />
     
               <Button color='teal' fluid size='large' onClick={signup}>
-                Let's Begin!
+                <Link to="/login">Let's Begin!</Link>
               </Button>
+              {data ? <h1>Welcome Back {data.username}</h1> : null}
             </Segment>
           </Form>
           <Message>
             Already have an account? <Link to="/login">Login</Link>
-            <br/>
-            <br/>
             <br/>
             <br/>
             Homepage:  <Link to="/">Go Home</Link>

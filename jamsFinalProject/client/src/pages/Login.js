@@ -19,31 +19,40 @@ function LoginForm() {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:8000/login",
-    }).then((res) => console.log(res));
-  };
-  const getUser = () => {
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:8000/user",
+      url: "/login",
     }).then((res) => {
-      setData(res.data);
-      console.log(res.data);
+      console.log(res)
+      window.location.href= '/resources';
+      
+    
     });
   };
+
+
+
+  
+  // const getUser = () => {
+  //   Axios({
+  //     method: "GET",
+  //     withCredentials: true,
+  //     url: "http://localhost:8000/user",
+  //   }).then((res) => {
+  //     setData(res.data);
+  //     console.log(res.data);
+  //   });
+  // };
 
   return (
     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center'>
-          <Image src='/logo.png' /> Log-in to your account
-        </Header>
         <Form size='large'>
           <Segment stacked>
+          <Header as='h2' color='teal' textAlign='center'>
+          Log-in to your account
+          </Header>
             <Form.Input fluid icon='user' 
               iconPosition='left' 
-              placeholder='E-mail address' 
+              placeholder='Username' 
               onChange={(e) => setloginName(e.target.value)}
             />
             <Form.Input
@@ -55,7 +64,7 @@ function LoginForm() {
               onChange={(e) => setLoginPassword(e.target.value)}
             />
 
-            <Button color='teal' fluid size='large' onClick={login, getUser}>
+            <Button color='teal' fluid size='large' onClick={login}>
               Login
             </Button>
             {data ? <h1>Welcome Back {data.username}</h1> : null}
@@ -63,8 +72,6 @@ function LoginForm() {
         </Form>
         <Message>
           New to us? <Link to="/signup">Sign Up</Link>
-          <br/>
-          <br/>
           <br/>
           <br/>
           Homepage:  <Link to="/">Go Home</Link>
