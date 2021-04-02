@@ -8,7 +8,7 @@ import Axios from "axios";
 function SignupForm() {
   const [signupName, setSignupName] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
-
+  const [data, setData] = useState(null);
   const signup = () => {
     Axios({
       method: "POST",
@@ -21,10 +21,27 @@ function SignupForm() {
     }).then((res) => 
     {
       console.log(res)
-      window.location.href= '/resources';
+      window.location.href= '/login';
     });
   };
 
+
+  // const login = () => {
+  //   Axios({
+  //     method: "POST",
+  //     data: {
+  //       username: loginName,
+  //       password: loginPassword,
+  //     },
+  //     withCredentials: true,
+  //     url: "/login",
+  //   }).then((res) => {
+  //     console.log(res)
+  //     window.location.href= '/resources';
+      
+    
+  //   });
+  // };
   // const getUser = () => {
   //   Axios({
   //     method: "GET",
@@ -61,8 +78,9 @@ function SignupForm() {
               />
     
               <Button color='teal' fluid size='large' onClick={signup}>
-                Let's Begin!
+                <Link to="/login">Let's Begin!</Link>
               </Button>
+              {data ? <h1>Welcome Back {data.username}</h1> : null}
             </Segment>
           </Form>
           <Message>

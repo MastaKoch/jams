@@ -75,6 +75,17 @@ app.post("/api/signup", (req, res) => {
   });
 });
 
+
+
+// // Route for logging user out
+app.get("/api/logout", (req, res) => {
+  console.log(req);
+  req.logout();
+  res.redirect("/");
+});
+
+
+
 app.get("/api/user", (req, res) => {
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
