@@ -8,6 +8,7 @@ import Axios from "axios";
 import Signup from '../../pages/Signup';
 
 
+
 export default function Nav() {
   const { path } = useRouteMatch();
   const user = useContext(UserContext);
@@ -69,6 +70,7 @@ export default function Nav() {
         <h1 className="navLogo">JAMS</h1>
         {user && (
           <div className="welcomePane">
+
             <p className="welcome">Welcome, {user.username}! </p>
             <Menu.Item>
               {/* <Link to="/">
