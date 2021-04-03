@@ -26,7 +26,7 @@ export default function EduResources() {
            </div>
            <br />
            <Button color='teal' fluid size='large' onClick={LandingPage}>
-                <Link to="/">Let's Begin!</Link>
+                <Link to="/">Back to Homepage</Link>
               </Button>
            </Container>
             <br />
