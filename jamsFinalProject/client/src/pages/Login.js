@@ -3,7 +3,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import { StateBrowserRouter, Route, Link, useRouteMatch, Switch, Router } from 'react-router-dom';
 import { useState } from "react";
 import Axios from "axios";
-import SignupForm from "./Signup";
+// import SignupForm from "./Signup";
 
 function LoginForm() {
 

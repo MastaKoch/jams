@@ -1,6 +1,6 @@
 // For the Authentication
 
-const User = require("../models/user");
+const User = require("../models/users");
 const bcrypt = require("bcryptjs");
 const localStrategy = require("passport-local").Strategy;
 
