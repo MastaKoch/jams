@@ -11,7 +11,7 @@ const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 // const bodyParser = require("body-parser");
-const User = require("./models/user");
+const User = require("./models/users");
 // -------
 const app = express();
 const PORT = process.env.PORT || 3001;
