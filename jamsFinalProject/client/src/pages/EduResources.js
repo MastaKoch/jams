@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Header, Button } from 'semantic-ui-react';
-import Footer from './components/Footer';
+import { Link } from 'react-router-dom';
+import LandingPage from './LandingPage';
 
 
 export default function EduResources() {
@@ -24,13 +25,13 @@ export default function EduResources() {
                </p>
            </div>
            <br />
-           <Button color='teal' fluid size='large' onClick={signup}>
+           <Button color='teal' fluid size='large' onClick={LandingPage}>
                 <Link to="/">Let's Begin!</Link>
               </Button>
            </Container>
             <br />
             <br />
-            <Footer />
+
 
         </div>
     )
