@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import EduResources from './pages/EduResources';
 import UserContext from './utils/contexts/UserContext';
+import Footer from './components/Footer'
 import { useEffect, useState } from 'react';
 import API from './utils/API';
 
@@ -42,6 +43,10 @@ useEffect(()=> {
             </Route>
           </Switch>
         </ UserContext.Provider>
+        <br />
+        <br />
+        <br />
+        <Footer />
       </div>
     </Router>
   );
