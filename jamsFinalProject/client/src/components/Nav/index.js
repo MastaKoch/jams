@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Link, useRouteMatch, Switch, Router } from 'react
 import UserContext from '../../utils/contexts/UserContext';
 import { useContext } from 'react';
 import Axios from "axios";
-import Signup from '../../pages/Signup';
+
 
 
 
@@ -43,7 +43,7 @@ export default function Nav() {
     }).then((res) => 
     {
       console.log(res)
-      window.location.href= '/resources';
+      window.location.href= '/';
     });
   };
 

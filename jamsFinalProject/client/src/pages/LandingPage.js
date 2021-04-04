@@ -1,7 +1,9 @@
 import React from "react";
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Button } from 'semantic-ui-react';
 import Carousel from '../components/Carousel/index';
 import Wrapper from '../components/Wrapper/index';
+import EduResources from './EduResources';
+import { Link } from 'react-router-dom';
 
 
 
@@ -42,7 +44,9 @@ export default function landingPage() {
           <br />
           <br />
        
-
+          <Button color='teal' fluid size='large' onClick={EduResources}>
+                <Link to="/resources">Explore Education Resources</Link>
+              </Button>
         </Container>
       </div>
     );
