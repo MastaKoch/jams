@@ -25,6 +25,10 @@ export default function EduResources() {
                </p>
            </div>
            <br />
+           <br />
+           <br />
+           <Header as="h3" className="motto">To get return to our homepage, please click the button below.</Header>
+
            <Button color='teal' fluid size='large' onClick={LandingPage}>
                 <Link to="/">Back to Homepage</Link>
               </Button>

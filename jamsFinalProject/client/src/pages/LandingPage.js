@@ -28,8 +28,6 @@ export default function landingPage() {
             to post their opinions and upvote on their classmates responses on any given topic assigned by their teacher. 
             <br/>
             <br/>
-
-
             Here's how it works:
           </p>
           
@@ -40,12 +38,11 @@ export default function landingPage() {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
+
+          <Header as="h3" className="motto">To get started, please visit our Educational Resource Page for more information.</Header>
        
           <Button color='teal' fluid size='large' onClick={EduResources}>
-                <Link to="/resources">Explore Education Resources</Link>
+                <Link to="/resources">Click here to: Explore Education Resources</Link>
               </Button>
         </Container>
       </div>
