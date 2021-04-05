@@ -1,20 +1,24 @@
 import React from "react";
-import { Button, Menu } from 'semantic-ui-react';
-import './style.css';
-import { BrowserRouter, Route, Link, useRouteMatch, Switch, Router } from 'react-router-dom';
-import UserContext from '../../utils/contexts/UserContext';
-import { useContext } from 'react';
+import { Button, Menu } from "semantic-ui-react";
+import "./style.css";
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  useRouteMatch,
+  Switch,
+  Router,
+} from "react-router-dom";
+import UserContext from "../../utils/contexts/UserContext";
+import { useContext } from "react";
 import Axios from "axios";
-
-
-
 
 export default function Nav() {
   const { path } = useRouteMatch();
   const user = useContext(UserContext);
-  // const signOff = ()=> {   
+  // const signOff = ()=> {
   //     localStorage.clear();
-  //     window.location.href = '/';  
+  //     window.location.href = '/';
   // }
 
   const logout = () => {
@@ -23,13 +27,10 @@ export default function Nav() {
       withCredentials: true,
       url: "/api/logout",
     }).then((res) => {
-      console.log(res)
-      window.location.href= '/';
-      
-    
+      console.log(res);
+      window.location.href = "/";
     });
   };
-
 
   const signup = () => {
     Axios({
@@ -40,10 +41,9 @@ export default function Nav() {
       },
       withCredentials: true,
       url: "/api/signup",
-    }).then((res) => 
-    {
-      console.log(res)
-      window.location.href= '/';
+    }).then((res) => {
+      console.log(res);
+      window.location.href = "/";
     });
   };
 
@@ -68,20 +68,19 @@ export default function Nav() {
 
       <div className="jamDiv">
         <h1 className="navLogo">JAMS</h1>
-        {user && (
-          <div className="welcomePane">
+        <div>
+          {user && (
+            <div className="conditionalRender">
+              <div className="helloUser">
+                <h1 className="welcome">Welcome, {user.username}! </h1>
+              </div>
 
-            <p className="welcome">Welcome, {user.username}! </p>
-            <Menu.Item>
-              {/* <Link to="/">
-              <a href="/" onClick={() => signOff()}> */}
-                <Button 
-                onClick= {logout}>Log Out</Button>
-                {/* </a>
-              </Link> */}
-            </Menu.Item>
-          </div>
-        )}
+              <div className="logoutBtn">
+                <Button className="logoutNowBtn" onClick={logout}>Log Out</Button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Menu>
   );
