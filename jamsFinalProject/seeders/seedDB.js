@@ -1,21 +1,26 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+require('dotenv').config()
+
 // This file empties the Books collection and inserts the books below
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/jamsDB"
+  "mongodb://localhost/jamsDB",
+  { 
+    useNewUrlParser: true 
+  }
 );
-const SubjectsSeed = [
+const categorySeed = [
   {
     category: "Reading",
     source: "https://www.youtube.com/watch?v=lLmloCC-0rM",
-    synopsis: "reading comprehension",
+    synopsis: "Reading comprehension",
     response:"This resource helped me tremendously with my childs reading skills",
   },
   {
     category: "Writing",
     source: "https://vimeo.com/237791015",
-    synopsis:"developing critical writing skills",
+    synopsis:"Developing critical writing skills.",
     response:"Great video! Very educational to me as a parent",
   },
   {
@@ -49,11 +54,15 @@ const SubjectsSeed = [
     response: "Never knew my kid would be so interested in engineering!",
   },
 ];
-db.SubjectsSeed
+
+db.Category
   .remove({})
-  .then(() => db.Subjects.collection.insertMany(SubjectsSeed))
+  .then(() => db.Category.insertMany(categorySeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data)
+
+  
+    //console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
