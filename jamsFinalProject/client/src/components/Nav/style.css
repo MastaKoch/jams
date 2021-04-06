@@ -1,27 +1,58 @@
-.navLogo{
-    font-size: 50pt;
-    align-content: center;
-    color: rgb(68, 3, 68);
+
+.conditionalRender{
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+} 
+
+.helloUser{
+    margin-left: 27rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.logoutBtn{
+    margin-left: 30rem;
+}
+
+
+
 .welcome{
-    font-size: 30pt;
-    margin-right: 50px;
+    margin-left: 20px;
+
+}
+
+.navLogo{
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    font-size: 40pt;
     color: rgb(68, 3, 68);
+    /* margin-left: 38rem; */
+
+}
+.jamDiv{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    /* align-content: center; */
+    /* text-align: center; */
+
 }
 .navMenu {
     opacity: .8;
-}
+    /* justify-content: space-between; */
+   
+} 
 
-.navMenu:hover{
+ .navMenu:hover{
     opacity: 1.0;
-}
-.jamDiv{
-    align-items: center;
-    margin-left: 400px;
-    position: relative;
-}
+} 
 
-.welcomePane{
-    text-align: 10px;
+.logoutNowBtn{
+    color: white !important;
+    background-color: rgb(68, 3, 68) !important;
 }
