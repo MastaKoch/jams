@@ -1,7 +1,7 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-
+require('dotenv').config()
 // --------
 
 // const cors = require("cors");
@@ -76,7 +76,6 @@ app.post("/api/signup", (req, res) => {
 });
 
 
-
 // // Route for logging user out
 app.get("/api/logout", (req, res) => {
   console.log(req);
@@ -99,7 +98,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  "mongodb+srv://jerquanus:Blankman@93@cluster0.abs6r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
