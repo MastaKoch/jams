@@ -1,4 +1,4 @@
 module.exports = {
-  Category: require('./category'),
+  Resources: require('./resources'),
   Users: require("./users")
 };

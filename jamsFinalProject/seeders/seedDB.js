@@ -10,7 +10,7 @@ mongoose.connect(
     useNewUrlParser: true 
   }
 );
-const categorySeed = [
+const resourceSeed = [
   {
     category: "Reading",
     source: "https://www.youtube.com/watch?v=lLmloCC-0rM",
@@ -55,9 +55,11 @@ const categorySeed = [
   },
 ];
 
-db.Category
+// Needs a comments DB and connecting user id to the catergory id for users to leave
+
+db.Resources
   .remove({})
-  .then(() => db.Category.insertMany(categorySeed))
+  .then(() => db.Resources.insertMany(resourceSeed))
   .then(data => {
     console.log(data)
 
