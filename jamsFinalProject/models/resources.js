@@ -2,10 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const jamsSchema = new Schema({
-  category: { type: String, required: true },
-  source: { type: String, required: false },
-  synopsis: { type: String, required: false },
-  response: { type: String, required: false }
+  imagePath: { type: String, required: true},
+  title: { type: String, required: true},
+  description: { type: String, required: true},
+  links: { type: String, required: true},
+  comments: {body: [String], date: Date},
+  date: { type: Date, default: Date.now},
 });
 
 const Resources = mongoose.model("Resources", jamsSchema);
