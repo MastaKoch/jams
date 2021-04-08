@@ -8,7 +8,7 @@ import Nav from "./components/Nav";
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import EduResources from './pages/EduResources';
+import Resources from './pages/Resources';
 import UserContext from './utils/contexts/UserContext';
 import Footer from './components/Footer'
 import API from './utils/API';
@@ -52,7 +52,7 @@ useEffect(()=> {
               <Login />
             </Route>
             <Route exact path="/resources">
-              <EduResources />
+              <Resources />
             </Route>
           </Switch>
         </ UserContext.Provider>

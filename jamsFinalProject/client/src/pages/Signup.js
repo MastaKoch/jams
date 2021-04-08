@@ -37,7 +37,7 @@ function SignupForm() {
   //     url: "/login",
   //   }).then((res) => {
   //     console.log(res)
-  //     window.location.href= '/resources';
+  //     window.location.href= '/';
       
     
   //   });

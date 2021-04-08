@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LandingPage from './LandingPage';
 
 
-export default function EduResources() {
+export default function Resources() {
     return (
         <div>
            <Container text className="container">

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Header, Button } from 'semantic-ui-react';
 import Carousel from '../components/Carousel/index';
 import Wrapper from '../components/Wrapper/index';
-import EduResources from './EduResources';
+import Resources from './Resources';
 import { Link } from 'react-router-dom';
 
 
@@ -41,7 +41,7 @@ export default function landingPage() {
 
           <Header as="h3" className="motto">To get started, please visit our Educational Resource Page for more information.</Header>
        
-          <Button color='teal' fluid size='large' onClick={EduResources}>
+          <Button color='teal' fluid size='large' onClick={Resources}>
                 <Link to="/resources">Click here to: Explore Education Resources</Link>
               </Button>
         </Container>
