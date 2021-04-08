@@ -2,23 +2,23 @@ import React from "react";
 import { Container, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import LandingPage from './LandingPage';
-import { useState, useEffect} from 'react';
-import API from '../utils/API';
-import ResourceItems from '../components/ResourceItems/ResourceItems';
+// import { useState, useEffect} from 'react';
+// import API from '../utils/API';
+// import ResourceItems from '../components/ResourceItems/ResourceItems';
 
 
 export default function Resources() {
-    const [resources, setResources]= useState([{name: "Alex", age: 25}]);
-    useEffect(()=> {
-        getResources()
-    }, [])
+    // const [resources, setResources]= useState([{name: "Alex", age: 25}]);
+    // useEffect(()=> {
+    //     getResources()
+    // }, [])
 
-    const getResources = () => {
-        API.getResources().then(res => {
-            console.log(res)
-            setResources(res.data)
-        })
-    }
+    // const getResources = () => {
+    //     API.getResources().then(res => {
+    //         console.log(res)
+    //         setResources(res.data)
+    //     })
+    // }
     return (
         <div>
            <Container text className="container">
@@ -38,7 +38,7 @@ export default function Resources() {
                 Visit our Jams Resources to check out some helpful information on getting started with your child's early literacy development.
                </p>
            </div>
-           <ResourceItems resources={resources}/>
+           {/* <ResourceItems resources={resources}/> */}
            <br />
            <br />
            <br />
