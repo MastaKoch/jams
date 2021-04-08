@@ -12,6 +12,8 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 // const bodyParser = require("body-parser");
 const User = require("./models/users");
+
+const Resources = require("./models/resources");
 // -------
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -43,6 +45,7 @@ require("./config/passportConfig")(passport);
 // ----
 // Routes
 app.post("/login", (req, res, next) => {
+  console.log("RouteHit")
   passport.authenticate("local", (err, user, info) => {
     if (err) throw err;
     if (!user) {
@@ -83,7 +86,12 @@ app.get("/api/logout", (req, res) => {
   res.redirect("/");
 });
 
-
+app.get("/api/resources", (req, res) => {
+  console.log("routeHit");
+  Resources.find({}).then(dbResources => {
+    res.json(dbResources);
+  })
+})
 
 app.get("/api/user", (req, res) => {
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
@@ -98,7 +106,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI,
+  process.env.MONGODB_URI || "mongodb://localhost/jamsDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
