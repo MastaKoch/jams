@@ -1,4 +1,5 @@
 module.exports = {
   Resources: require('./resources'),
-  Users: require("./users")
+  Users: require("./users"),
+  Comments: require("./comments")
 };
