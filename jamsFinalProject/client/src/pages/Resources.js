@@ -3,14 +3,7 @@ import { Container, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import LandingPage from './LandingPage';
 
-// 7 subjects import here
-// import Science from './pages/SciencePage';
-// import Technology from './pages/TechnologyPage';
-// import Reading from './pages/ReadingPage';
-// import Engineering from './pages/EngineeringPage';
-// import Art from './pages/ArtPage';
-// import Math from './pages/MathPage';
-// import Writing from './pages/WritingPage';
+
 // import { useState, useEffect} from 'react';
 // import API from '../utils/API';
 // import ResourceItems from '../components/ResourceItems/ResourceItems';
@@ -65,6 +58,27 @@ export default function Resources() {
           <br />
           <br />
           <br />
+          
+          <h2>Subjects of Interest</h2>
+          <Button color="blue" fluid size="large">
+            <Link to="/science">Science</Link>
+          </Button>
+          <br />
+ 
+          <Button color="red" fluid size="large">
+            <Link to="/technology">Technology</Link>
+          </Button>
+          <br />
+    
+          <Button color="green" fluid size="large">
+            <Link to="/reading">Reading</Link>
+          </Button> 
+          <br />
+          <Button color="yellow" fluid size="large">
+            <Link to="/art">Art</Link>
+          </Button> 
+
+
           <Header as="h3" className="motto">
             To get return to our homepage, please click the button below.
           </Header>
@@ -72,10 +86,7 @@ export default function Resources() {
           <Button color="teal" fluid size="large" onClick={LandingPage}>
             <Link to="/">Back to Homepage</Link>
           </Button>
-
-          <Button color="blue" fluid size="large" onClick={Science}>
-            <Link to="/science">Science</Link>
-          </Button>
+          <br />
         </Container>
         <br />
         <br />
