@@ -47,6 +47,10 @@ export default function Nav() {
     });
   };
 
+  
+
+
+
   console.log(user);
   return (
     <Menu className="navMenu">

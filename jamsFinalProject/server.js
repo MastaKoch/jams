@@ -1,5 +1,4 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 require('dotenv').config()
 // --------
@@ -12,6 +11,8 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 // const bodyParser = require("body-parser");
 const User = require("./models/users");
+const Comments = require("./controllers/commentsController")
+
 
 const Resources = require("./models/resources");
 // -------
@@ -79,7 +80,7 @@ app.post("/api/signup", (req, res) => {
 });
 
 
-// // Route for logging user out
+// // Route for logging user out -----
 app.get("/api/logout", (req, res) => {
   console.log(req);
   req.logout();
@@ -90,6 +91,7 @@ app.get("/api/resources", (req, res) => {
   console.log("routeHit");
   Resources.find({}).then(dbResources => {
     res.json(dbResources);
+    res.redirect("/resources");
   })
 })
 
@@ -97,14 +99,24 @@ app.get("/api/user", (req, res) => {
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
 
-// Serve up static assets (usually on heroku)
+app.get("/api/comments", (req, res) => {
+ Comments.findAll(req, res)
+});
+
+// app.post("/api/comments", (req, res) => {
+//   Comments.findAll(req, res)
+// });
+
+
+
+// Serve up static assets (usually on heroku) ----
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // Add routes, both API and view
 // app.use(routes);
 
-// Connect to the Mongo DB
+// Connect to the Mongo DB ----
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/jamsDB",
   {
