@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import LandingPage from './LandingPage';
 
 // 7 subjects import here
-// import Science from './pages/SciencePage';
-// import Technology from './pages/TechnologyPage';
-// import Reading from './pages/ReadingPage';
-// import Engineering from './pages/EngineeringPage';
-// import Art from './pages/ArtPage';
-// import Math from './pages/MathPage';
-// import Writing from './pages/WritingPage';
+// import Science from './SciencePage';
+// import Technology from './TechnologyPage';
+// import Reading from './ReadingPage';
+// import Engineering from './EngineeringPage';
+import Art from './ArtPage';
+// import Math from './MathPage';
+// import Writing from './WritingPage';
 // import { useState, useEffect} from 'react';
 // import API from '../utils/API';
 // import ResourceItems from '../components/ResourceItems/ResourceItems';
@@ -73,8 +73,8 @@ export default function Resources() {
             <Link to="/">Back to Homepage</Link>
           </Button>
 
-          <Button color="blue" fluid size="large" onClick={Science}>
-            <Link to="/science">Science</Link>
+          <Button color="blue" fluid size="large" onClick={Art}>
+            <Link to="/art">ART</Link>
           </Button>
         </Container>
         <br />

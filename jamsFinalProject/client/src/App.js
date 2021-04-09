@@ -18,7 +18,7 @@ import API from './utils/API';
 // import Technology from './pages/TechnologyPage';
 // import Reading from './pages/ReadingPage';
 // import Engineering from './pages/EngineeringPage';
-// import Art from './pages/ArtPage';
+import Art from './pages/ArtPage';
 // import Math from './pages/MathPage';
 // import Writing from './pages/WritingPage';
 
@@ -75,11 +75,11 @@ useEffect(()=> {
             {/* </Route>
             <Route exact path="/engineering"> */}
               {/* insert component here */}
-            {/* </Route>
-            <Route exact path="/art"> */}
-              {/* insert component here */}
-            {/* </Route>
-            <Route exact path="/math"> */}
+            {/* </Route> */}
+            <Route exact path="/art"> 
+              <Art />
+            </Route>
+            {/*<Route exact path="/math"> */}
               {/* insert component here */}
             {/* </Route>
             <Route exact path="/writing"> */}

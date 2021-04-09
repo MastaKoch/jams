@@ -3,10 +3,7 @@ import { Container, Header, Button } from 'semantic-ui-react';
 import Carousel from '../components/Carousel/index';
 import Wrapper from '../components/Wrapper/index';
 import Resources from './Resources';
-import { Link } from 'react-router-dom';
-
-
-
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 export default function landingPage() {
 
