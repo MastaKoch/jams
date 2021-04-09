@@ -13,6 +13,16 @@ import UserContext from './utils/contexts/UserContext';
 import Footer from './components/Footer'
 import API from './utils/API';
 
+// 7 subjects import here
+// import Science from './pages/SciencePage';
+// import Technology from './pages/TechnologyPage';
+// import Reading from './pages/ReadingPage';
+// import Engineering from './pages/EngineeringPage';
+// import Art from './pages/ArtPage';
+// import Math from './pages/MathPage';
+// import Writing from './pages/WritingPage';
+
+
 // Styling
 import './index.css';
 
@@ -54,8 +64,29 @@ useEffect(()=> {
             <Route exact path="/resources">
               <Resources />
             </Route>
+            {/* <Route exact path="/science">
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/technology"> */}
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/reading"> */}
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/engineering"> */}
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/art"> */}
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/math"> */}
+              {/* insert component here */}
+            {/* </Route>
+            <Route exact path="/writing"> */}
+              {/* insert component here */}
+            {/* </Route> */} 
           </Switch>
-        </ UserContext.Provider>
+        </UserContext.Provider>
         <br />
         <br />
         <br />

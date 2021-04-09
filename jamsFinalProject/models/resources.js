@@ -6,8 +6,13 @@ const jamsSchema = new Schema({
   title: { type: String, required: true},
   description: { type: String, required: true},
   links: { type: String, required: true},
-  comments: {body: [String], date: Date},
-  date: { type: Date, default: Date.now},
+  comments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "comments",
+    },
+  ],
+
 });
 
 const Resources = mongoose.model("Resources", jamsSchema);
