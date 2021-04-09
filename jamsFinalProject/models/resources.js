@@ -12,7 +12,6 @@ const jamsSchema = new Schema({
       ref: "comments",
     },
   ],
-
 });
 
 const Resources = mongoose.model("Resources", jamsSchema);
