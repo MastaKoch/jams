@@ -99,9 +99,9 @@ app.get("/api/user", (req, res) => {
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
 
-app.get("/api/comments", (req, res) => {
- Comments.findAll(req, res)
-});
+// app.get("/api/comments", (req, res) => {
+//  Comments.findAll(req, res)
+// });
 
 // app.post("/api/comments", (req, res) => {
 //   Comments.findAll(req, res)

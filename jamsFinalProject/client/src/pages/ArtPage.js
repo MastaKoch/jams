@@ -3,6 +3,7 @@ import { Container, Header, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import UserContext from "../utils/contexts/UserContext";
 import { useContext } from "react";
+import Wrapper from '../components/Wrapper/index';
 
 
 
@@ -47,6 +48,8 @@ export default function Art() {
       </p>
     </div>
     <div>
+
+      <Wrapper />
       {/* form does not have handle click submit yet */}
       <form>
         <input type="text"/>
