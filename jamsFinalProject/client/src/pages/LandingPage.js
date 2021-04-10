@@ -30,7 +30,6 @@ export default function landingPage() {
             <br/>
             Here's how it works:
           </p>
-          
         <Wrapper />
         <br/>
         <br/>
