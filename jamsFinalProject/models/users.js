@@ -8,7 +8,7 @@ const Users = new mongoose.Schema({
   comments: [
     {
       type: Schema.Types.ObjectId,
-      ref: "comments",
+      ref: "Comments",
     },
   ],
 });
