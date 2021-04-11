@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require('dotenv').config()
+// const router = express.Router();
 // --------
 
 // const cors = require("cors");
@@ -22,12 +24,12 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here -------------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: "http://localhost:3001", // <-- location of the react app we're connecting to
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3001", // <-- location of the react app we're connecting to
+    credentials: true,
+  })
+);
 app.use(
   session({
     secret: "secretcode",
@@ -99,13 +101,26 @@ app.get("/api/user", (req, res) => {
   res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
 
-app.get("/api/comments", (req, res) => {
- Comments.findAll(req, res)
-});
-
-// app.post("/api/comments", (req, res) => {
-//   Comments.findAll(req, res)
+// app.get("/api/comments", (req, res) => {
+//  Comments.findAll(req, res)
 // });
+
+app.put("/api/resources/:id", ({ body }, res) => {
+  const comment = req.body.comment;
+  db.Resources.findOneAndUpdate(
+    {_id: req.params.id },
+    { $push: { comments:req.body}},
+    {new: true, runValidators: true})
+    .then((dbResources) => {
+      res.json(dbResources);
+    })
+    .catch(err => {
+        res.json(err);
+        console.log(err);
+    })
+
+  newComment.save();
+});
 
 
 

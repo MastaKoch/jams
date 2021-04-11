@@ -40,7 +40,7 @@ body {
 }
 
 .ol{
-    padding: 40px;
+    /* padding: 40px; */
     font-size: 20pt;
 }
 
@@ -74,4 +74,9 @@ box-shadow: -24px 24px 12px 13px #300524;
     -webkit-box-shadow: -24px 24px 12px 13px #BA158A; 
     box-shadow: -24px 24px 12px 13px #BA158A;
 
+}
+
+.comment{
+    width: 600px;
+    height: 650px;
 }

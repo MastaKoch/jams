@@ -14,9 +14,9 @@ import Footer from './components/Footer'
 import API from './utils/API';
 
 // 7 subjects import here
-// import Science from './pages/SciencePage';
-// import Technology from './pages/TechnologyPage';
-// import Reading from './pages/ReadingPage';
+import Science from './pages/SciencePage';
+import Technology from './pages/TechnologyPage';
+import Reading from './pages/ReadingPage';
 // import Engineering from './pages/EngineeringPage';
 import Art from './pages/ArtPage';
 // import Math from './pages/MathPage';
@@ -64,22 +64,22 @@ useEffect(()=> {
             <Route exact path="/resources">
               <Resources />
             </Route>
-            {/* <Route exact path="/science">
-              {/* insert component here */}
-            {/* </Route>
-            <Route exact path="/technology"> */}
-              {/* insert component here */}
-            {/* </Route>
-            <Route exact path="/reading"> */}
-              {/* insert component here */}
-            {/* </Route>
-            <Route exact path="/engineering"> */}
+            <Route exact path="/science">
+              <Science />
+            </Route>
+            <Route exact path="/technology"> 
+              <Technology />
+            </Route>
+            <Route exact path="/reading"> 
+              <Reading />
+            </Route> 
+            {/*<Route exact path="/engineering"> */}
               {/* insert component here */}
             {/* </Route> */}
             <Route exact path="/art"> 
               <Art />
-            </Route>
-            {/*<Route exact path="/math"> */}
+             </Route>
+            {/* <Route exact path="/math"> */} 
               {/* insert component here */}
             {/* </Route>
             <Route exact path="/writing"> */}

@@ -8,8 +8,10 @@ const jamsSchema = new Schema({
   links: { type: String, required: true},
   comments: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "comments",
+      username: String,
+      body: String,
+      date: { type: Date, default: Date.now},
+      
     },
   ],
 });
