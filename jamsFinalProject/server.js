@@ -74,7 +74,7 @@ app.post("/api/signup", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         password: hashedPassword,
-      });
+      https://github.com/MastaKoch/jams/pull/47/conflict?name=jamsFinalProject%252Fserver.js&ancestor_oid=9e9b82b763dfb80caf3f1aba15e662db762d9c40&base_oid=e904e6935b3ee09c7105caa168bf8f8b1b59a9dd&head_oid=6aba6afa12102a4e63201d8fa694292b5164ec85});
       await newUser.save();
       res.send("User Created");
     }
@@ -103,6 +103,13 @@ app.get("/api/user", (req, res) => {
 
 // app.get("/api/comments", (req, res) => {
 //  Comments.findAll(req, res)
+
+
+// });
+
+// app.post("/api/comments", (req, res) => {
+//   Comments.findAll(req, res)
+
 // });
 
 app.put("/api/resources/:id", ({ body }, res) => {

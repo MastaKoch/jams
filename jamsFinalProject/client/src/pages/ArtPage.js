@@ -5,7 +5,10 @@ import UserContext from "../utils/contexts/UserContext";
 import { useContext } from "react";
 import Wrapper from "../components/Wrapper/index";
 import "../index.css";
+
 import Comments from "../components/CommentSection/index"
+
+
 
 export default function Art() {
   // const { path } = useRouteMatch();
@@ -36,6 +39,7 @@ export default function Art() {
 
       </div>
 
+
       <div>
         <h2>Resources Instructions</h2>
         <Wrapper />
@@ -61,11 +65,41 @@ export default function Art() {
 
         {/* form does not have handle click submit yet */}
         {/* <h3>Place your Comment in the textbox below</h3>
+
+
+      <div>
+        <h2>Resources Instructions</h2>
+        <Wrapper />
+        <br />
+        <p>
+          Using your critical thinking and writing skills - how did the
+          information from the resource improve your understanding of the topic?
+        </p>
+      </div>
+      <div>
+        <Button
+          color="black"
+          fluid
+          size="large"
+          onClick={() =>
+            OpenInNewTab("https://www.youtube.com/watch?v=QZQyV9BB50E")
+          }
+        >
+          Click here to View Resource
+        </Button>
+
+        {/* form does not have handle click submit yet */}
+        <h3>Place your Comment in the textbox below</h3>
+
         <textarea className="comment" type="text" />
 
         <Button color="black" fluid size="large">
           Submit Response
+
         </Button> */}
+
+        </Button>
+
       </div>
     </Container>
   );
