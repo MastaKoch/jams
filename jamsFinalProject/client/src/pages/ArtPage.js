@@ -89,16 +89,16 @@ export default function Art() {
         </Button>
 
         {/* form does not have handle click submit yet */}
-        <h3>Place your Comment in the textbox below</h3>
+        {/* <h3>Place your Comment in the textbox below</h3>
 
         <textarea className="comment" type="text" />
 
         <Button color="black" fluid size="large">
           Submit Response
 
-        </Button> */}
+        </Button>  */}
 
-        </Button>
+        {/* </Button> */}
 
       </div>
     </Container>
