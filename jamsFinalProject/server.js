@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require('dotenv').config()
 // const router = express.Router();
 // --------
@@ -23,12 +24,12 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here -------------
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: "http://localhost:3001", // <-- location of the react app we're connecting to
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://localhost:3001", // <-- location of the react app we're connecting to
+    credentials: true,
+  })
+);
 app.use(
   session({
     secret: "secretcode",
@@ -73,7 +74,7 @@ app.post("/api/signup", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         password: hashedPassword,
-      });
+      https://github.com/MastaKoch/jams/pull/47/conflict?name=jamsFinalProject%252Fserver.js&ancestor_oid=9e9b82b763dfb80caf3f1aba15e662db762d9c40&base_oid=e904e6935b3ee09c7105caa168bf8f8b1b59a9dd&head_oid=6aba6afa12102a4e63201d8fa694292b5164ec85});
       await newUser.save();
       res.send("User Created");
     }
@@ -102,11 +103,31 @@ app.get("/api/user", (req, res) => {
 
 // app.get("/api/comments", (req, res) => {
 //  Comments.findAll(req, res)
+
+
 // });
 
 // app.post("/api/comments", (req, res) => {
 //   Comments.findAll(req, res)
+
 // });
+
+app.put("/api/resources/:id", ({ body }, res) => {
+  const comment = req.body.comment;
+  db.Resources.findOneAndUpdate(
+    {_id: req.params.id },
+    { $push: { comments:req.body}},
+    {new: true, runValidators: true})
+    .then((dbResources) => {
+      res.json(dbResources);
+    })
+    .catch(err => {
+        res.json(err);
+        console.log(err);
+    })
+
+  newComment.save();
+});
 
 
 
