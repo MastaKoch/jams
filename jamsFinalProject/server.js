@@ -14,7 +14,7 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 // const bodyParser = require("body-parser");
 const User = require("./models/users");
-const Comments = require("./controllers/commentsController")
+const commentController = require("./controllers/commentsController")
 
 
 const Resources = require("./models/resources");
@@ -85,16 +85,11 @@ app.post("/api/signup", (req, res) => {
 });
 
 // router for comments
-app.use(routes);
+app.use(router);
 router.route("/")
     .get(commentController.findAll)
     .post(commentController.create)
-        const username = req.body.username;
-        const comments = req.body.comments;
-        const newComment = commentController({
-            username,
-            comments
-        });
+       
 
 router.route("/:id")
     .get(commentController.findById)
