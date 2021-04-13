@@ -55,12 +55,12 @@ export default function Resources() {
             </p>
           </div>
           {/* <ResourceItems resources={resources}/> */}
+          {/* <br />
           <br />
-          <br />
-          <br />
+          <br /> */}
           
-          <h2>Subjects of Interest</h2>
-          <Button color="blue" fluid size="large">
+          {/* <h2>Subjects of Interest</h2> */}
+          {/* <Button color="blue" fluid size="large">
             <Link to="/science">Science</Link>
           </Button>
           <br />
@@ -85,7 +85,7 @@ export default function Resources() {
 
           <Button color="teal" fluid size="large" onClick={LandingPage}>
             <Link to="/">Back to Homepage</Link>
-          </Button>
+          </Button> */}
           <br />
         </Container>
         <br />

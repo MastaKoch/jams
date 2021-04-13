@@ -1,27 +1,51 @@
-import React from "react";
+import React, { Component } from 'react';
+import { Form } from 'semantic-ui-react';
 
-// This file exports the Input, TextArea, and FormBtn components
+const options = [
+  { key: 'user', text: 'Name', value: 'username' },
+  
+]
 
-export function Input(props) {
-  return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
-  );
+class FormExampleSubcomponentControl extends Component {
+  state = {}
+
+  handleChange = (e, { value }) => this.setState({ value })
+
+  render() {
+    const { value } = this.state
+    return (
+      <Form>
+        {/* <Form.Group widths='equal'>
+          <Form.Input fluid label='First name' placeholder='First name' />
+          <Form.Input fluid label='Last name' placeholder='Last name' />
+          <Form.Select
+            fluid
+            label='Gender'
+            options={options}
+            placeholder='Gender'
+          />
+        </Form.Group> */}
+        <Form.Group inline>
+          <label>Agree or Disagree?</label>
+          <Form.Radio
+            label='Agree'
+            value='ag'
+            checked={value === 'ag'}
+            onChange={this.handleChange}
+          />
+          <Form.Radio
+            label='Disagree'
+            value='dg'
+            checked={value === 'dg'}
+            onChange={this.handleChange}
+          />
+          
+        </Form.Group>
+        <Form.TextArea label='What are your thoughts?' placeholder='Comments' />
+        <Form.Button>Post Response!</Form.Button>
+      </Form>
+    )
+  }
 }
 
-export function TextArea(props) {
-  return (
-    <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
-    </div>
-  );
-}
-
-export function FormBtn(props) {
-  return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
-      {props.children}
-    </button>
-  );
-}
+export default FormExampleSubcomponentControl

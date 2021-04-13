@@ -5,8 +5,9 @@ import UserContext from "../utils/contexts/UserContext";
 import { useContext } from "react";
 import Wrapper from "../components/Wrapper/index";
 import "../index.css";
+import Form from '../components/Form';
 
-import Comments from "../components/CommentSection/index"
+// import Comments from "../components/CommentSection/index"
 
 
 
@@ -60,8 +61,8 @@ export default function Art() {
         >
           Click here to View Resource
         </Button>
-
-        <Comments />
+        <Form />
+        {/* <Comments /> */}
 
         {/* form does not have handle click submit yet */}
         {/* <h3>Place your Comment in the textbox below</h3>
