@@ -1,51 +1,58 @@
-import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import axios from "axios";
 
-const options = [
-  { key: 'user', text: 'Name', value: 'username' },
+
+
+export default function CreateForm() {
   
-]
+    const [input, setInput] = useState({
+      username: '',
+      comments: ''
+    })
+    
+    function handleChange(event) {
+      const {username, value} = event.target;
+    
+      setInput(prevInput => {
+        return {
+          ...prevInput,
+          [username]: value
+        }
+      })
+    }
+  
+    function handleClick(event) {
+      event.preventDefault();
+      const newComment ={
+          username: input.username,
+          comments: input.comments
+      }
+        axios.post('http://localhost:3001/', newComment)
+    }
 
-class FormExampleSubcomponentControl extends Component {
-  state = {}
 
-  handleChange = (e, { value }) => this.setState({ value })
-
-  render() {
-    const { value } = this.state
-    return (
-      <Form>
-        {/* <Form.Group widths='equal'>
-          <Form.Input fluid label='First name' placeholder='First name' />
-          <Form.Input fluid label='Last name' placeholder='Last name' />
-          <Form.Select
-            fluid
-            label='Gender'
-            options={options}
-            placeholder='Gender'
-          />
-        </Form.Group> */}
-        <Form.Group inline>
-          <label>Agree or Disagree?</label>
-          <Form.Radio
-            label='Agree'
-            value='ag'
-            checked={value === 'ag'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Disagree'
-            value='dg'
-            checked={value === 'dg'}
-            onChange={this.handleChange}
-          />
-          
-        </Form.Group>
-        <Form.TextArea label='What are your thoughts?' placeholder='Comments' />
-        <Form.Button>Post Response!</Form.Button>
-      </Form>
-    )
-  }
+  return (<div>
+    <Form>
+  <Form.Group controlId="Form.ControlInputname">
+    <Form.Label>Name</Form.Label>
+    <Form.Control type="Name" placeholder="username" onChange={handleChange}/>
+  </Form.Group>
+  <Form.Group controlId="Form.ControlSelections">
+    <Form.Label>Agree or Disagree</Form.Label>
+    <Form.Control as="select">
+      <option>Agree</option>
+      <option>Disagree</option>
+    </Form.Control>
+  </Form.Group>
+  <Form.Group controlId="Form.ControlTextarea">
+    <Form.Label>Please include Comment</Form.Label>
+    <Form.Control as="textarea" rows={3} onChange={handleChange}/>
+  </Form.Group>
+  <Button onClick={handleClick} variant="primary" type="submit">
+    Post
+  </Button>
+</Form>
+</div>
+  )
 }
-
-export default FormExampleSubcomponentControl

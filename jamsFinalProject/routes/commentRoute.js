@@ -3,7 +3,13 @@ const commentController = require("../controllers/commentsController");
 
 router.route("/")
     .get(commentController.findAll)
-    .post(commentController.create);
+    .post(commentController.create)
+        const username = req.body.username;
+        const comments = req.body.comments;
+        const newComment = commentController({
+            username,
+            comments
+        });
 
 router.route("/:id")
     .get(commentController.findById)
@@ -45,4 +51,5 @@ router.route("/math").get((req, res) => {
     .then(foundComments => {res.json(foundComments);
     });
 })
+newComment.save();
 module.exports = router;
