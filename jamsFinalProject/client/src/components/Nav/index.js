@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Menu } from "semantic-ui-react";
 import "./style.css";
+import NavDropDown from './navDropDown';
 import {
   BrowserRouter,
   Route,
@@ -85,6 +86,8 @@ export default function Nav() {
             </div>
           )}
         </div>
+
+        <NavDropDown />
       </div>
     </Menu>
   );

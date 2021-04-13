@@ -56,3 +56,18 @@
     color: white !important;
     background-color: rgb(68, 3, 68) !important;
 }
+
+.dropdownNav{
+    /* background-color: rgb(68, 3, 68) !important; */
+   
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+/* .label{
+    color: white !important;
+    text-decoration-color: white;
+} */
