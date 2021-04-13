@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require('dotenv').config()
-// const router = express.Router();
+const router = require("express").Router();
+
 // --------
 
 // const cors = require("cors");
@@ -83,6 +84,22 @@ app.post("/api/signup", (req, res) => {
 })
 });
 
+// router for comments
+app.use(routes);
+router.route("/")
+    .get(commentController.findAll)
+    .post(commentController.create)
+        const username = req.body.username;
+        const comments = req.body.comments;
+        const newComment = commentController({
+            username,
+            comments
+        });
+
+router.route("/:id")
+    .get(commentController.findById)
+    .put(commentController.update)
+    .delete(commentController.remove);
 
 // // Route for logging user out -----
 app.get("/api/logout", (req, res) => {
