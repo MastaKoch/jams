@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 
 const Comments = new Schema({
+    username: String,
     comments: {body: [String], date: Date},
-    date: { type: Date, default: Date.now},
+    date: { type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model("Comments", Comments);

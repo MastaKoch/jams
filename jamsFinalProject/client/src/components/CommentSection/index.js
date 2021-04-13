@@ -1,58 +1,29 @@
-import React, { useState } from "react";
-import { Container, Header, Button } from "semantic-ui-react";
-import axios from "axios";
+import React, { useState, useEffect} from "react";
 
-function CreateComments () {
+function Comments () {
 
-  const [input, setInput] = useState({
-    comment:''
-  });
+  const [comments, setComments] = useState([{
+    username: '',
+    comments: ''
+  }])
 
-  function handleChange(event) {
-      const {name, value} = event.target;
+  useEffect(() => {
+    fetch('/').then(res => {
+      if(res.ok) {
+        return res.json()
+      }
+    }).then(jsonRes => setComments(jsonRes));
+  })
 
-      setInput(prevInput => {
-        return {
-          ...prevInput,
-          [name]: value
-        };
-      });
-  };
-
-  function handleClick(event) {
-    event.preventDefault();
-    console.log(input);
-    const newComment ={
-      comment: input.comment
-    }
-    axios.post("https://localhost:3001/api/resources/:id",newComment)
-  };
-
-    return (
+    return (<div>
+      {comments.map(comment => 
         <div>
-        <h3>Place your Comment in the textbox below</h3>
-        <form>
-          <div>
-            <textarea 
-              onChange={handleChange} 
-              name="comment" 
-              value={input.comment} 
-              className="comment" 
-              type="text" 
-              placeholder="Enter Your Response Here"
-            />
-          </div>
-
-          <Button color="black" fluid size="large" onClick={handleClick}>
-            Submit Response
-          </Button>
-          
-        </form>
-
-        
-       
-    </div>
-    );
+        <h3>{comment.username}</h3>
+        <h4>{comment.comments}</h4>
+        </div>
+      )}
+      </div>
+    )
 }
 
-export default CreateComments;
+export default Comments;
