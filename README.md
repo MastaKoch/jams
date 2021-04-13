@@ -3,7 +3,10 @@ To create a Reddit style Educational Resource application with MERN (Mongo DB/Mo
 
 ## Project Description
 
-Company's Employee Directories can be very useful tools. Whether it be heavily relied on by new recruites, in the onboarding process, across departments, or for customer service purposes, having access to a databse that list all employees is a necessity. An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name. This application will implement Reactjs to do all the things listed herein, with the assistance of Random User API.
+Welcome to JAMS: Helping children find their voice since 2021. JAMS is an application that is designed for kids to use in a school setting. Like Reddit, it gives users the ability to post on “threads” on various topics. In JAMS, the topics can be on virtually anything educational (Science, language arts, social studies, math, etc.). 
+
+The team at JAMS believe this application is indispensable; many children in schools all over the world don’t feel confident when it comes to speaking up and voicing their opinions in front of their peers. With JAMS, every child has a voice. 
+
 
 ## User Story
 
