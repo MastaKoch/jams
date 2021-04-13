@@ -24,16 +24,16 @@ The team at JAMS believe this application is indispensable; many children in sch
 * The following image and gif shows the web application's appearance and functionality:
 
 
-![Jams Screenshot]() Jams React App
+![Jams Screenshot](/jamsFinalProject/client/src/imgs/Appimg.png) Jams React App
 
-![Jams gif]() Jams gif
+![Jams gif](/jamsFinalProject/client/src/imgs/JamsDemo.gif) Jams gif
 
 ## Live URL:
-<a href="">Jams Heroku App</a>
+<a href="https://jams-app.herokuapp.com/">Jams Heroku App</a>
 
-<a href="">Jams GitHub Repo</a>
+<a href="https://github.com/MastaKoch/jams.git">Jams GitHub Repo</a>
 
-<a href="">Jams Youtube Demo</a>
+<a href="https://youtu.be/ePVi9HlnKJ4">Jams Youtube Demo</a>
 
 ## Summary
 * In this project we will create a user responsive UI application using React.js to access a Reddit style Education Resource application. The database for the application uses Mongo DB and Atlas cloud base sharing that will allow users to create signup for login accounts and access resources stored in our React table. Users will be able to dynamically respond with the resources and leave reviews stating their experiences. With future development, the users will be able to view previously stored information from their accounts.
@@ -42,17 +42,17 @@ The team at JAMS believe this application is indispensable; many children in sch
 * HTML page
   * Index.html
   
-![Index.html]() Index.html Public file
+![Index.html](/jamsFinalProject/client/src/imgs/indexPub.png) Index.html Public file
 
 * CSS elements 
   * Bootstrap css stlying on Index.html public.
   * Import files for react components and image rendering.
   
-![styling]() index.css Style file 
+![styling](/jamsFinalProject/client/src/imgs/styleImg.png) index.css Style file 
 
 * Javascript page
 
-![App.js]() App.js file
+![App.js](/jamsFinalProject/client/src/imgs/AppJSimg.png) App.js file
 
   * Variables
   * Arrays with objects
@@ -62,18 +62,12 @@ The team at JAMS believe this application is indispensable; many children in sch
   * Links to external sources/lbraries
   * API Key
   * .gitignore
-
-
   * Package.json
-
-![NPM Packages](.png) Passport, Express, Mongoose, React, Axios, Bcrypt, Fontawesome, and Bootstrap 
-
-
   * Functions
   * Axios calls
   * Children/Props
 
-![Education Resource React Table](.png) Live links for Education Resources
+![Education Resource React](/jamsFinalProject/client/src/imgs/edResources.png) Live links for Education Resources
 
  
 
